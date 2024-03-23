@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/videoView"/>
+
+    <ProgressBar
+        android:id="@+id/short_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Video Title"
+            android:textStyle="bold"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/title_layout">
+
+        <ImageView
+            android:id="@+id/share_image"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="right"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/baseline_share_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/fav_layout">
+
+        <ImageView
+            android:id="@+id/react_image"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="right"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/baseline_favorite_border_24" />
+
+        <TextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

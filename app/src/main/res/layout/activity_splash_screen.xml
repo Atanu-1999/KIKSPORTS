@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splash_Screen"
+    android:background="@color/app_color">
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:src="@drawable/kik_logo"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KIK"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:lineSpacingExtra="@dimen/_20sdp"/>
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_below="@id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SPORTS"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:lineSpacingExtra="@dimen/_10sdp"/>
+
+</RelativeLayout>
