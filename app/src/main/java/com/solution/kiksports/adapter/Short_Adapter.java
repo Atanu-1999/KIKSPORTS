@@ -22,7 +22,6 @@ import java.util.ArrayList;
 public class Short_Adapter extends RecyclerView.Adapter<Short_Adapter.ViewHolder> {
     ArrayList<Short_Model> shortList;
     Context context;
-
     public Short_Adapter(ArrayList<Short_Model> shortList, Context context) {
         this.shortList = shortList;
         this.context = context;
@@ -34,7 +33,6 @@ public class Short_Adapter extends RecyclerView.Adapter<Short_Adapter.ViewHolder
         View view = LayoutInflater.from(context).inflate(R.layout.short_layout, parent, false);
         return new ViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull Short_Adapter.ViewHolder holder, int position) {
         holder.videoView.setVideoURI(Uri.parse(shortList.get(position).getUrl()));
@@ -61,14 +59,13 @@ public class Short_Adapter extends RecyclerView.Adapter<Short_Adapter.ViewHolder
                 mp.start();
             }
         });
+
         holder.txt_title.setText(shortList.get(position).getTitle());
     }
-
     @Override
     public int getItemCount() {
         return shortList.size();
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txt_title, txt_count;
         VideoView videoView;
