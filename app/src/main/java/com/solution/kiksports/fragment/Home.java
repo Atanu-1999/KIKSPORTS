@@ -1,6 +1,7 @@
 package com.solution.kiksports.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -15,9 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.solution.kiksports.R;
+import com.solution.kiksports.activity.Schedule_Web;
+import com.solution.kiksports.activity.Shorts_Page;
 import com.solution.kiksports.adapter.ImageAdapter;
 import com.solution.kiksports.model.Slider_Model;
 
@@ -36,6 +41,8 @@ public class Home extends Fragment {
     private int[] rainbowColors;
     private int currentColorIndex = 0;
     private boolean isBlinking = false;
+    LinearLayout category_video,btn_live;
+    RelativeLayout shorts_layout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,9 @@ public class Home extends Fragment {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getActivity().getWindow().getContext(), R.color.app_color));
 
+        shorts_layout = home.findViewById(R.id.shorts_layout);
+        btn_live = home.findViewById(R.id.btn_live);
+        category_video = home.findViewById(R.id.category_video);
         viewPager = home.findViewById(R.id.viewPager);
         sliderAdapter = new ImageAdapter(getContext(), images);
         viewPager.setAdapter(sliderAdapter);
@@ -67,12 +77,30 @@ public class Home extends Fragment {
                 Color.BLUE,
                 Color.MAGENTA
         };
-
         // Start changing text color and blinking after 1 second
         handler.postDelayed(colorChangeRunnable, 1000);
 
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new SliderTimer(), 4000, 6000);
+
+        shorts_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), Shorts_Page.class));
+            }
+        });
+        btn_live.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), Schedule_Web.class));
+            }
+        });
+        category_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), Schedule_Web.class));
+            }
+        });
 
         return home;
     }
